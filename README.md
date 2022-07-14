@@ -60,6 +60,6 @@ Specifically, each output neuron has a weight vector which it multiplies against
 
 ![image](https://user-images.githubusercontent.com/61620007/179069965-dc0a8f42-53fc-48a1-90b9-7987a6e41a45.png)
 
-## **1.7: Skip-Gram Code Implementation**
+## **1.7: Skip-Gram abstract look**
 ![image](https://user-images.githubusercontent.com/61620007/179070128-2ad5c794-e070-40f8-a0ff-bc45bf395e34.png)
 
