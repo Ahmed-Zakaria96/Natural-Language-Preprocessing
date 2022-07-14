@@ -38,6 +38,7 @@ we’re going to say that we’re learning word vectors with 300 features. So th
 ![image](https://user-images.githubusercontent.com/61620007/179070926-8b07af87-770b-456a-8e26-aaa736be4bed.png)
 
 The hidden layer of this model is really just operating as a lookup table. The output of the hidden layer is just the “word vector” for the input word.
+
 ![image](https://user-images.githubusercontent.com/61620007/179070954-22271bb1-3691-4892-bfdb-e749baa00fe0.png)
 
 ## **1.5- The output layer**
