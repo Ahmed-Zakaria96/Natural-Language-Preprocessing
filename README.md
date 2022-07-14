@@ -21,7 +21,7 @@ We’re going to train the neural network to do the following. Given a specific 
 We’ll train the neural network to do this by feeding it word pairs found in our training documents. 
 > The below example shows some of the training samples (word pairs) we would take from the sentence “The quick brown fox jumps over the lazy dog.” I’ve used a small window size of 2 just for the example. The word highlighted in blue is the input word.
 
-![image](https://user-images.githubusercontent.com/61620007/179069398-ad89d84e-90a3-4096-b9df-30e14c27fc7d.png)
+![image](https://user-images.githubusercontent.com/61620007/179070545-5fe788a1-1d01-4e3e-a3aa-2b9cecdc43a6.png)
 
 ## **1.3- Architecture Details**
 
@@ -29,22 +29,22 @@ We’re going to represent an input word like “ants” as a one-hot vector. Th
 <br>
 <br>
 The output of the network is a single vector (also with 10,000 components) containing, for every word in our vocabulary, the probability that a randomly selected nearby word is that vocabulary word.
-![image](https://user-images.githubusercontent.com/61620007/179069491-763aa35c-de46-4e0e-b048-7a9a74a32000.png)
+![image](https://user-images.githubusercontent.com/61620007/179070841-7261bb3b-855f-45d4-9bb1-e9f14be24042.png)
 There is no activation function on the hidden layer neurons, but the output neurons use softmax. We’ll come back to this later.
 
 ## **1.4- The Hidden Layer**
 
 we’re going to say that we’re learning word vectors with 300 features. So the hidden layer is going to be represented by a weight matrix with 10,000 rows (one for every word in our vocabulary) and 300 columns (one for every hidden neuron).
-![image](https://user-images.githubusercontent.com/61620007/179069547-96616722-1739-42d1-b76f-5c694c35405a.png)
+![image](https://user-images.githubusercontent.com/61620007/179070926-8b07af87-770b-456a-8e26-aaa736be4bed.png)
 
 The hidden layer of this model is really just operating as a lookup table. The output of the hidden layer is just the “word vector” for the input word.
-![image](https://user-images.githubusercontent.com/61620007/179069639-0b3349e4-a703-465a-925a-8561f87782e8.png)
+![image](https://user-images.githubusercontent.com/61620007/179070954-22271bb1-3691-4892-bfdb-e749baa00fe0.png)
 
 ## **1.5- The output layer**
 
 Specifically, each output neuron has a weight vector which it multiplies against the word vector from the hidden layer, then it applies the function exp(x) to the result. Finally, in order to get the outputs to sum up to 1, we divide this result by the sum of the results from all 10,000 output nodes.
 
-![image](https://user-images.githubusercontent.com/61620007/179069718-5a0abbaf-f735-43d4-9abb-d9c3c96bc4e3.png)
+![image](https://user-images.githubusercontent.com/61620007/179070994-af77c5bb-ae29-4b81-9cee-e75bddb5a1ae.png)
 
 ## **1.6- Math of the Skip-Gram**
 
